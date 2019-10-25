@@ -42,3 +42,30 @@ select {
 span {
     text-transform: uppercase;
 }
+
+@media (min-width: 600px) {
+   .logo {
+       width: 20vh;
+   } 
+
+   .app-screen {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+   }
+
+}
+
+@media (min-width: 1000px) {
+    .app-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;    
+        padding: 0 0 0 2rem;
+    }
+
+    .logo {
+        width: 25vh;
+    }
+
+}
