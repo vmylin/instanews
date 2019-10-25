@@ -1,12 +1,12 @@
 //TODO
 // Add mixin for tablet media query
 
-@mixin desktop {
+@mixin tablet {
   @media (min-width: $tablet-width) {
     @content;
   }
 }
-@mixin tablet {
+@mixin desktop {
   @media (min-width: $desktop-width) {
     @content;
   }
