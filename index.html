@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>InstaNews</title>
     <!-- RESET ALWAYS GO FIRST -->
-    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="build/css/reset.css"> -->
     <!-- Put fonts below reset -->
-    <link rel="stylesheet" href="css/font.css">
+    <!-- <link rel="stylesheet" href="build/css/font.css"> -->
     <link rel="stylesheet" href="build/css/style.min.css">
 </head>
 
@@ -20,14 +20,16 @@
             <img class="logo" src="./assets/images/nyt-logo.svg" alt="new york times logo">
             <div class="section-selector">
             <p class="news-section">Choose a section:</p>
-            <select name="selections" class="news-selection" id="" value="Sections ...">
-                <option value="home">Home</option>
-                <option value="arts">Arts</option>
-                <option value="business">Business</option>
-                <option value="sports">Sports</option>
-                <option value="technology">Technology</option>
-                <option value="fashion">Fashion</option>
-            </select>
+           <form> <select name="selections" class="news-selection" id="news">
+            <option value="sections">Sections ...</option>
+            <option value="home">Home</option>
+            <option value="arts">Arts</option>
+            <option value="business">Business</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Technology</option>
+            <option value="fashion">Fashion</option>
+        </select></form>
+           
         </div>
         </section>
         <section class="category">

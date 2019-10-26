@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    $('option').on('select', function () {
+    $('#news').on('change', function () {
         // $('option').val().
         $.ajax({
             method: 'GET',
@@ -8,14 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=AWYIBsLV3ssb38vug8gBUciGOuyLBhEN'
         })
             .done(function (data) {
-                console.log(data);
-                // $('.user-name').append(data.login + ' - ' + data.followers);
-                // $('.link').append(`<a href="` + data.blog + `">` + data.blog + `</a>`);
-                // $.each(data, function (key, value) {
-                //     $('.repo-list').append(`<li>` + value.name + `</li>`)
-                // })
+                console.log(data.results[0].multimedia[4].url);
+$.each(data.results, function() {
+    $('.category').append(`<p>`+this.title+`</p>`)
+    $('.category').css(`background-image`,`url(`+this.multimedia[4].url+`)`)
+});
             })
-            .fail(function (    ) {
+            .fail(function () {
                 $('.user-name').append('Sorry there was an error.');
             });
             //always method is used for something like a loading spinner

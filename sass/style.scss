@@ -1,5 +1,7 @@
 // add a reset
+@import 'reset';
 @import 'variables';
-@import "mixins";
+@import 'mixins';
 //add one for font
-
+@import 'font';
+@import 'main';
