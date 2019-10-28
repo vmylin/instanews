@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .done(function (data) {
                 console.log(data.results);
 $.each(data.results, function() {
-    $('.article-list').append(`<li class="articles">`+this.abstract+`</li>`)
     $('.article-list').append(`<a href="`+this.abstract+`"></a>`)
+    $('.article-list').append(`<li class="articles">`+this.abstract+`</li>`)
     $('.articles').css(`background-image`,`url(`+ this.multimedia[4].url+ `)`)
 });
             })

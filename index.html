@@ -14,43 +14,37 @@
 </head>
 
 <body>
-    <div class="app-container">
-        <section class="app-screen">
-            <header class="app-content">
-                <div class="logo-container">
-                    <img class="logo" src="./assets/images/nyt-logo.svg" alt="new york times logo">
-                </div>
-                <form class="category-form">
-                    <div class="section-selector">
-                        <p class="news-section">Choose a section:</p>
-                        <select name="selections" class="news-selection" id="news">
-                            <option value="sections">Sections ...</option>
-                            <option value="home">Home</option>
-                            <option value="arts">Arts</option>
-                            <option value="business">Business</option>
-                            <option value="sports">Sports</option>
-                            <option value="technology">Technology</option>
-                            <option value="fashion">Fashion</option>
-                        </select>
-                </form>
-
-            </header>
-        </section>
-    </div>
-    <section class="category">
-        <div class="article-container">
-
-            <ul class="article-list">
-                <li class="article-item">
-                    <a href=""></a>
-                </li>
-            </ul>
+    <div class="site-container">
+    <header class="header-wrapper">
+        <div class="logo">
+            <img src="assets/images/nyt-logo.svg" alt="new york times logo">
         </div>
-    </section>
-    <footer class="app-footer">
+        <form class="category-form">
+            <div class="section-selector">
+                <p class="news-section">Choose a section:</p>
+                <select name="selections" class="news-category" id="news">
+                    <option value="sections">Sections ...</option>
+                    <option value="home">Home</option>
+                    <option value="arts">Arts</option>
+                    <option value="business">Business</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                    <option value="fashion">Fashion</option>
+                </select>
+        </form>
+    </header>
+    <article class="article-container">
+        
+        <ul class="article-list">
+            <li class="article-item">
+                <a href=""></a>
+            </li>
+        </ul>
+    </article>
+    <footer>
         <p class="copyright">&copy; Copyright 2019 <span>instanews</span></p>
     </footer>
-    </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
         </script>

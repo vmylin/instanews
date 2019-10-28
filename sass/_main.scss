@@ -5,80 +5,50 @@ TYPOGRAPHY
 */
 
 body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1em;
-  background-color: black;
-  color: white;
+  font-family: $basefontfamily; //currently is open sans but check variables.scss for changes
+  font-size: $basefontsize; //currently is 1em but check variables.scss for changes
+  background-color: $bgcolor; //currently is black but check variables.scss for changes
+  color: $fontcolor; //currently is white but check variables.scss for changes
 }
-
-.news-section,
-.copyright {
-  font-weight: 100;
-}
-.app-container {
+// header section
+.header-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-content: center;
   justify-content: center;
-  height: 100vh;
-  position: relative;
-  select {
-    background-color: white;
-    &.news-section {
-      padding: 1.125rem;
-    }
+  flex-wrap: wrap;
+  height: 100%;
+  .news-section {
+    padding: $padding;
   }
-.article-list {
+  .news-category {
+    background-color: white;
+    padding: $padding $padding $padding $padding;
+    font-size: 16px;
+  }
+  @include tablet {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    padding: $padding;
+  }
+
+  @include desktop {
+    justify-content: flex-start;
+  }
 }
-  .articles {
-      width: 100vw;
-      height: 10vh;
+.logo {
+  img {
+    @include tablet {
+      width: 20vh;
+    }
   }
 }
 
 /* footer section */
-.app-footer {
-  position: absolute;
-  bottom: 50px;
-}
-span {
-  text-transform: uppercase;
-}
-
-@media (min-width: 600px) {
-  .logo {
-    width: 20vh;
-  }
-
-  .app-screen {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-@media (min-width: 1000px) {
-  .app-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 0 0 0 2rem;
-  }
-  .app-content {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .category-form {
-    align-self: center;
-  }
-
-  .logo {
-    width: 25vh;
+footer {
+  text-align: center;
+  margin-bottom: 4rem;
+  span {
+    text-transform: uppercase;
   }
 }
