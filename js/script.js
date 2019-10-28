@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=AWYIBsLV3ssb38vug8gBUciGOuyLBhEN'
         })
             .done(function (data) {
-                console.log(data.results[0].multimedia[4].url);
+                console.log(data.results);
 $.each(data.results, function() {
-    $('.category').append(`<p>`+this.title+`</p>`)
-    $('.category').css(`background-image`,`url(`+this.multimedia[4].url+`)`)
+    $('.article-list').append(`<li class="articles">`+this.abstract+`</li>`)
+    $('.article-list').append(`<a href="`+this.abstract+`"></a>`)
+    $('.articles').css(`background-image`,`url(`+ this.multimedia[4].url+ `)`)
 });
             })
             .fail(function () {

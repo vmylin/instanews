@@ -79,7 +79,7 @@ TYPOGRAPHY
 
 */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1em;
   background-color: black;
   color: white; }
@@ -101,12 +101,19 @@ body {
           justify-content: center;
   height: 100vh;
   position: relative; }
-
-.news-section {
-  padding: 1.125rem; }
-
-select {
-  background-color: white; }
+  .app-container select {
+    background-color: white; }
+    .app-container select.news-section {
+      padding: 1.125rem; }
+  .app-container .article-list {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row; }
+  .app-container .articles {
+    width: 100vw;
+    height: 10vh; }
 
 /* footer section */
 .app-footer {
@@ -138,5 +145,16 @@ span {
     -webkit-box-pack: start;
             justify-content: flex-start;
     padding: 0 0 0 2rem; }
+  .app-content {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    align-content: center;
+    -webkit-box-pack: center;
+            justify-content: center; }
+  .category-form {
+    align-self: center; }
   .logo {
     width: 25vh; } }
