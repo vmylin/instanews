@@ -4,7 +4,12 @@ $desktop-width: 1000px;
 
 // ****
 $basefontsize: 1em;
-$padding: 1em;
+$padding: 1rem;
 $bgcolor: #000;
 $fontcolor: #fff;
-$basefontfamily: "Open Sans", sans-serif;       
+$basefontfamily: "Open Sans", sans-serif;   
+
+// GRID
+$column: 1fr 1fr 1fr;
+$row: repeat(38, 1.5rem);
+//****

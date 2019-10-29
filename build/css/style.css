@@ -85,41 +85,44 @@ body {
   color: #fff; }
 
 .header-wrapper {
-  display: -webkit-box;
-  display: flex;
-  align-content: center;
-  -webkit-box-pack: center;
-          justify-content: center;
-  flex-wrap: wrap;
-  height: 100%; }
-  .header-wrapper .news-section {
-    padding: 1em; }
-  .header-wrapper .news-category {
-    background-color: white;
-    padding: 1em 1em 1em 1em;
-    font-size: 16px; }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(38, 1.5rem);
+  max-width: 100%;
+  text-align: center; }
+  .header-wrapper .logo {
+    grid-column: 2 / 3;
+    grid-row: 7 / 8; }
+  .header-wrapper .category-form {
+    grid-row: 12 / 13;
+    grid-column: 2 / 3;
+    text-align: center; }
   @media (min-width: 600px) {
     .header-wrapper {
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-              flex-direction: row;
-      -webkit-box-pack: center;
-              justify-content: center;
-      padding: 1em; } }
+      grid-template-columns: 10% 1fr 1fr 1fr; }
+      .header-wrapper .logo {
+        grid-row: 17 / 18; }
+        .header-wrapper .logo img {
+          width: 13vh; }
+      .header-wrapper .category-form {
+        grid-column: 3 / 4;
+        grid-row: 18 / 19;
+        text-align: left; } }
   @media (min-width: 1000px) {
     .header-wrapper {
-      -webkit-box-pack: start;
-              justify-content: flex-start; } }
+      grid-template-columns: 5% 5% 1fr 1fr 1fr; }
+      .header-wrapper .logo {
+        grid-row: 15/16;
+        text-align: left; }
+        .header-wrapper .logo img {
+          width: auto; }
+      .header-wrapper .category-form {
+        grid-row: 18 / 19; } }
 
-@media (min-width: 600px) {
-  .logo img {
-    width: 20vh; } }
-
-/* footer section */
 footer {
-  text-align: center;
-  margin-bottom: 4rem; }
+  text-align: center; }
   footer span {
     text-transform: uppercase; }
+  @media (min-width: 1000px) {
+    footer {
+      text-align: left; } }
