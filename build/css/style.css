@@ -87,30 +87,30 @@ body {
 .header-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(38, 1.5rem);
+  grid-template-rows: repeat(35, 1.5rem);
   max-width: 100%;
   text-align: center; }
   .header-wrapper .logo {
     grid-column: 2 / 3;
     grid-row: 7 / 8; }
   .header-wrapper .category-form {
-    grid-row: 12 / 13;
+    grid-row: 19 / 20;
     grid-column: 2 / 3;
     text-align: center; }
   @media (min-width: 600px) {
     .header-wrapper {
       grid-template-columns: 10% 1fr 1fr 1fr; }
       .header-wrapper .logo {
-        grid-row: 17 / 18; }
+        grid-row: 13 / 14; }
         .header-wrapper .logo img {
           width: 13vh; }
       .header-wrapper .category-form {
         grid-column: 3 / 4;
-        grid-row: 18 / 19;
+        grid-row: 15 / 16;
         text-align: left; } }
   @media (min-width: 1000px) {
     .header-wrapper {
-      grid-template-columns: 5% 5% 1fr 1fr 1fr; }
+      grid-template-columns: 5% 17% 1fr 1fr 1fr; }
       .header-wrapper .logo {
         grid-row: 15/16;
         text-align: left; }
@@ -119,7 +119,36 @@ body {
       .header-wrapper .category-form {
         grid-row: 18 / 19; } }
 
+.all-articles {
+  display: grid;
+  grid-template-columns: 1fr; }
+  .all-articles .each-article {
+    position: relative;
+    background-size: cover, contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px; }
+    .all-articles .each-article .title {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 0; }
+      .all-articles .each-article .title h2 {
+        font-weight: bold; }
+  @media (min-width: 600px) {
+    .all-articles {
+      grid-template-columns: 1fr 1fr;
+      height: 400px;
+      background-size: cover, contain;
+      background-repeat: no-repeat; } }
+  @media (min-width: 1000px) {
+    .all-articles {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      height: 400px;
+      background-size: cover, contain;
+      background-repeat: no-repeat; } }
+
 footer {
+  min-height: 100%;
   text-align: center; }
   footer span {
     text-transform: uppercase; }
