@@ -127,7 +127,14 @@ body {
     background-size: cover, contain;
     background-position: center;
     background-repeat: no-repeat;
-    height: 400px; }
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+    -webkit-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in; }
+    .all-articles .each-article:hover {
+      -webkit-filter: grayscale(0%);
+              filter: grayscale(0%); }
     .all-articles .each-article .title {
       background: rgba(0, 0, 0, 0.6);
       position: absolute;

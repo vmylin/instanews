@@ -69,6 +69,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     height: 400px;
+    filter: grayscale(100%);
+    transition: all 0.5s ease-in;
+    &:hover {
+      filter: grayscale(0%);
+    }
     .title {
       background: rgba(0, 0, 0, 0.6);
       position: absolute;
