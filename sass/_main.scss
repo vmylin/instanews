@@ -13,7 +13,7 @@ body {
 
 //header section
 .header-wrapper {
-  display: grid;
+  display: $grid;
   grid-template-columns: $column;
   grid-template-rows: $row;
   max-width: 100%;
@@ -26,9 +26,17 @@ body {
     grid-row: 19 / 20;
     grid-column: 2 / 3;
     text-align: center;
+    display: $grid;
+    grid-template-rows: 2rem 2rem;
+    .news-category {
+      font-size: 20px;
+    }
+    @include tablet {
+      grid-template-columns: 50%;
+    }
   }
   @include tablet {
-    grid-template-columns: 10% 1fr 1fr 1fr;
+    grid-template-columns: 10% $column;
     .logo {
       grid-row: 13 / 14;
       img {
@@ -42,7 +50,7 @@ body {
     }
   }
   @include desktop {
-    grid-template-columns: 5% 17% 1fr 1fr 1fr;
+    grid-template-columns: 5% 17% $column;
     .logo {
       grid-row: 15/16;
       text-align: left;
@@ -60,15 +68,15 @@ body {
 //start of article section
 
 .all-articles {
-  display: grid;
+  display: $grid;
   grid-template-columns: 1fr;
 
   .each-article {
     position: relative;
-    background-size: cover, contain;
+    background-size: $bg-size;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 400px;
+    background-repeat: $bg-repeat;
+    height: $articleH;
     filter: grayscale(100%);
     transition: all 0.5s ease-in;
     &:hover {
@@ -85,15 +93,15 @@ body {
   }
   @include tablet {
     grid-template-columns: 1fr 1fr;
-    height: 400px;
-    background-size: cover, contain;
-    background-repeat: no-repeat;
+    height: $articleH;
+    background-size: $bg-size;
+    background-repeat: $bg-repeat;
   }
   @include desktop {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 400px;
-    background-size: cover, contain;
-    background-repeat: no-repeat;
+    height: $articleH;
+    background-size: $bg-size;
+    background-repeat: $bg-repeat;
   }
 }
 //end of article section

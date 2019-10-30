@@ -8,8 +8,12 @@ $padding: 1rem;
 $bgcolor: #000;
 $fontcolor: #fff;
 $basefontfamily: "Open Sans", sans-serif;
+$articleH: 400px;
+$bg-size: cover, contain;
+$bg-repeat: no-repeat;
 
 // GRID
+$grid: grid;
 $column: 1fr 1fr 1fr;
 $row: repeat(35, 1.5rem);
 //****

@@ -96,7 +96,14 @@ body {
   .header-wrapper .category-form {
     grid-row: 19 / 20;
     grid-column: 2 / 3;
-    text-align: center; }
+    text-align: center;
+    display: grid;
+    grid-template-rows: 2rem 2rem; }
+    .header-wrapper .category-form .news-category {
+      font-size: 20px; }
+    @media (min-width: 600px) {
+      .header-wrapper .category-form {
+        grid-template-columns: 50%; } }
   @media (min-width: 600px) {
     .header-wrapper {
       grid-template-columns: 10% 1fr 1fr 1fr; }
