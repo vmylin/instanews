@@ -18,10 +18,12 @@ body {
   grid-template-rows: $row;
   max-width: 100%;
   text-align: center;
+
   .logo {
     grid-column: 2 / 3;
     grid-row: 7 / 8;
   }
+  //form
   .category-form {
     grid-row: 19 / 20;
     grid-column: 2 / 3;
@@ -32,11 +34,14 @@ body {
       font-size: 20px;
     }
     @include tablet {
-      grid-template-columns: 50%;
+      grid-template-columns: 75%;
     }
   }
+  // end of form
+
   @include tablet {
     grid-template-columns: 10% $column;
+    grid-template-rows: $row;
     .logo {
       grid-row: 13 / 14;
       img {
@@ -45,14 +50,15 @@ body {
     }
     .category-form {
       grid-column: 3 / 4;
-      grid-row: 15 / 16;
+      grid-row: 14 / 15;
       text-align: left;
     }
   }
   @include desktop {
     grid-template-columns: 5% 17% $column;
+    grid-template-rows: $row;
     .logo {
-      grid-row: 15/16;
+      grid-row: 10/11;
       text-align: left;
       img {
         width: auto;
@@ -62,6 +68,14 @@ body {
       grid-row: 18 / 19;
     }
   }
+  .load-gif {
+    display: none;
+    width: 50px;
+    height: auto;
+    grid-row: 22/24;
+    grid-column: 2/3;
+    margin: 0 auto;
+  }
 }
 //end of header section
 
@@ -70,35 +84,39 @@ body {
 .all-articles {
   display: $grid;
   grid-template-columns: 1fr;
-
-  .each-article {
-    position: relative;
-    background-size: $bg-size;
-    background-position: center;
-    background-repeat: $bg-repeat;
-    height: $articleH;
-    filter: grayscale(100%);
-    transition: all 0.5s ease-in;
-    &:hover {
-      filter: grayscale(0%);
-    }
-    .title {
-      background: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      bottom: 0;
-      h2 {
-        font-weight: bold;
+  a {
+    text-decoration: none;
+    color: $fontcolor;
+    .each-article {
+      display: $grid;
+      grid-template-rows: 2fr 23%;
+      background-size: $bg-size;
+      background-position: center;
+      background-repeat: $bg-repeat;
+      height: $articleH;
+      filter: grayscale(100%);
+      transition: all 0.3s ease-in;
+      &:hover {
+        filter: grayscale(0%);
+      }
+      .title {
+        grid-row: 2 / 3;
+        padding: $padding * 0.3;
+        background: rgba(0, 0, 0, 0.7);
+        h2 {
+          font-weight: bold;
+        }
       }
     }
   }
   @include tablet {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     height: $articleH;
     background-size: $bg-size;
     background-repeat: $bg-repeat;
   }
   @include desktop {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 25% 25% 25% 25%;
     height: $articleH;
     background-size: $bg-size;
     background-repeat: $bg-repeat;
