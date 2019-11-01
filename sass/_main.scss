@@ -75,9 +75,22 @@ body {
     .logo-container img {
       width: 80%;
     }
-    // @include tablet {
-    //   grid-
-    // }
+    @include tablet {
+      .category-form {
+        grid-row: 13/14;
+        align-self: center;
+        justify-items: center;
+      }
+      .logo-container img {
+        width: 35%;
+        justify-items: center;
+      }
+    }
+    @include desktop {
+      .category-form {
+        grid-row: 10/13;
+      }
+    }
   }
 
   .load-gif {
