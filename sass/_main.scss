@@ -70,7 +70,6 @@ body {
     }
   }
   &.change {
-    display: initial;
     display: grid;
     grid-template-rows: 2rem;
     .logo-container img {
