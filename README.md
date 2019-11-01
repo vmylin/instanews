@@ -1,13 +1,13 @@
-#Instanews RED Academy project
+# Instanews RED Academy project
 
-##Technologies used
+## Technologies used
 
-..* HTML
-..* CSS/SCSS
-..* AJAX
-..* javascript
-..* jQuery
-..* Gulp
+1. HTML
+2. CSS/SCSS
+3. AJAX
+4. javascript
+1. jQuery
+1. Gulp
 
-###Personal Learnings
+### Personal Learnings
 In this project, I try to learn and use more markdown language.
