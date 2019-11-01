@@ -1,9 +1,4 @@
-/* 
-
-TYPOGRAPHY
-
-*/
-
+//TYPOGRAPHY
 body {
   font-family: $basefontfamily; //currently is open sans but check variables.scss for changes
   font-size: $basefontsize; //currently is 1em but check variables.scss for changes
@@ -24,7 +19,7 @@ body {
     grid-row: 7 / 8;
   }
 
-  //form
+  //form (nested grid)
   .category-form {
     grid-row: 19 / 20;
     grid-column: 2 / 3;
@@ -38,7 +33,7 @@ body {
       grid-template-columns: 75%;
     }
   }
-  // end of form
+  // end of form (nested grid)
 
   @include tablet {
     grid-template-columns: 10% $column;
@@ -56,7 +51,8 @@ body {
     }
   }
   @include desktop {
-    grid-template-columns: 5% 17% $column;
+    grid-row: 13/14;
+    grid-template-columns: 5% 20% $column;
     grid-template-rows: $row;
     .logo-container {
       grid-row: 10/11;
@@ -65,10 +61,8 @@ body {
         width: auto;
       }
     }
-    .category-form {
-      grid-row: 18 / 19;
-    }
   }
+  //js addClass()
   &.change {
     display: grid;
     grid-template-rows: 2rem;
@@ -89,9 +83,11 @@ body {
     @include desktop {
       .category-form {
         grid-row: 10/13;
+        justify-items: left;
       }
     }
   }
+  //end of js addClass()
 
   .load-gif {
     display: none;
@@ -105,9 +101,6 @@ body {
       grid-column: 4/5;
       margin: inherit;
     }
-    // @include desktop {
-
-    // }
   }
 }
 //end of header section
@@ -117,6 +110,15 @@ body {
 .all-articles {
   display: $grid;
   grid-template-columns: 1fr;
+  &.change {
+    padding: $padding * 3 0;
+    @include tablet {
+      padding: $padding * 3 0;
+    }
+    @include desktop {
+      padding: $padding * 3;
+    }
+  }
   a {
     text-decoration: none;
     color: $fontcolor;
@@ -145,13 +147,11 @@ body {
 
   @include tablet {
     grid-template-columns: 50% 50%;
-    height: $articleH;
     background-size: $bg-size;
     background-repeat: $bg-repeat;
   }
   @include desktop {
     grid-template-columns: 25% 25% 25% 25%;
-    height: $articleH;
     background-size: $bg-size;
     background-repeat: $bg-repeat;
   }
@@ -160,13 +160,21 @@ body {
 
 //footer section
 footer {
-  min-height: 100%;
-  text-align: center;
-  padding: $padding;
+  color: #c2c2c2;
+  display: $grid;
+  grid-template-rows: 40vh;
+  align-items: end;
+  justify-items: center;
   span {
     text-transform: uppercase;
   }
+  &.change {
+    align-items: start;
+    grid-template-rows: 1fr;
+  }
   @include desktop {
-    text-align: left;
+    justify-items: left;
+    padding-left: $padding * 2;
   }
 }
+//end of footer section

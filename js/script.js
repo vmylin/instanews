@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     const articles = $('#articles');
 
     $('#news').on('change', function () {
-        //css selector to logo
         $('.header-wrapper').addClass('change');
-        // css selector to grid, change the size of the grid
+        $('.all-articles').addClass('change');
+        $('footer').addClass('change');
         let selection = $(this).val();
         $('.load-gif').show();
 
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     articles.append(`
                     <a href="${value.url}">
                         <article class="each-article" style="background-image:url(${value.multimedia[4].url})">
-                            
                             <div class="title">
                             <h2>${value.title}</h2>
                             <p>${value.abstract}</p></div>
@@ -41,30 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             })
             .fail(function () {
-                $('.all-articles').append(`<p>Sorry there was an error.</p>`);
+                $('.all-articles').append(`<p>Sorry there was an error, the api might have expired.</p>`);
             })
-            .always(function () {
-                //what i want to do in her is to for the svg loader....
-            })
-        //always method is used for something like a loading spinner
     });
     $('footer').append(`<p class="copyright">&copy; Copyright 2019 <span>instanews</span></p>`)
 
-});
-
-
-
-
-
-// jQuery also has a document ready you can use
-// NOTE all of these do the same thing, you just need one
-
-// $( document ).ready(function() {
-//     console.log( "ready!" );
-// });
-
-// OR the Shorthand
-
-// $(function() {
-//     console.log( "ready!" );
-// });
+});                                                   

@@ -73,11 +73,6 @@ table {
   font-weight: 300;
   font-style: italic; }
 
-/* 
-
-TYPOGRAPHY
-
-*/
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
@@ -118,15 +113,14 @@ body {
         text-align: left; } }
   @media (min-width: 1000px) {
     .header-wrapper {
-      grid-template-columns: 5% 17% 1fr 1fr 1fr;
+      grid-row: 13/14;
+      grid-template-columns: 5% 20% 1fr 1fr 1fr;
       grid-template-rows: repeat(23, 1.5rem); }
       .header-wrapper .logo-container {
         grid-row: 10/11;
         text-align: left; }
         .header-wrapper .logo-container img {
-          width: auto; }
-      .header-wrapper .category-form {
-        grid-row: 18 / 19; } }
+          width: auto; } }
   .header-wrapper.change {
     display: grid;
     grid-template-rows: 2rem; }
@@ -142,7 +136,8 @@ body {
         justify-items: center; } }
     @media (min-width: 1000px) {
       .header-wrapper.change .category-form {
-        grid-row: 10/13; } }
+        grid-row: 10/13;
+        justify-items: left; } }
   .header-wrapper .load-gif {
     display: none;
     width: 50px;
@@ -159,6 +154,14 @@ body {
 .all-articles {
   display: grid;
   grid-template-columns: 1fr; }
+  .all-articles.change {
+    padding: 3rem 0; }
+    @media (min-width: 600px) {
+      .all-articles.change {
+        padding: 3rem 0; } }
+    @media (min-width: 1000px) {
+      .all-articles.change {
+        padding: 3rem; } }
   .all-articles a {
     text-decoration: none;
     color: #fff; }
@@ -185,22 +188,28 @@ body {
   @media (min-width: 600px) {
     .all-articles {
       grid-template-columns: 50% 50%;
-      height: 400px;
       background-size: cover, contain;
       background-repeat: no-repeat; } }
   @media (min-width: 1000px) {
     .all-articles {
       grid-template-columns: 25% 25% 25% 25%;
-      height: 400px;
       background-size: cover, contain;
       background-repeat: no-repeat; } }
 
 footer {
-  min-height: 100%;
-  text-align: center;
-  padding: 1rem; }
+  color: #c2c2c2;
+  display: grid;
+  grid-template-rows: 40vh;
+  -webkit-box-align: end;
+          align-items: end;
+  justify-items: center; }
   footer span {
     text-transform: uppercase; }
+  footer.change {
+    -webkit-box-align: start;
+            align-items: start;
+    grid-template-rows: 1fr; }
   @media (min-width: 1000px) {
     footer {
-      text-align: left; } }
+      justify-items: left;
+      padding-left: 2rem; } }
