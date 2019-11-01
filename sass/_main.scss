@@ -19,10 +19,11 @@ body {
   max-width: 100%;
   text-align: center;
 
-  .logo {
+  .logo-container {
     grid-column: 2 / 3;
     grid-row: 7 / 8;
   }
+
   //form
   .category-form {
     grid-row: 19 / 20;
@@ -42,7 +43,7 @@ body {
   @include tablet {
     grid-template-columns: 10% $column;
     grid-template-rows: $row;
-    .logo {
+    .logo-container {
       grid-row: 13 / 14;
       img {
         width: 13vh;
@@ -57,7 +58,7 @@ body {
   @include desktop {
     grid-template-columns: 5% 17% $column;
     grid-template-rows: $row;
-    .logo {
+    .logo-container {
       grid-row: 10/11;
       text-align: left;
       img {
@@ -68,6 +69,18 @@ body {
       grid-row: 18 / 19;
     }
   }
+  &.change {
+    display: initial;
+    display: grid;
+    grid-template-rows: 2rem;
+    .logo-container img {
+      width: 80%;
+    }
+    // @include tablet {
+    //   grid-
+    // }
+  }
+
   .load-gif {
     display: none;
     width: 50px;
@@ -75,6 +88,14 @@ body {
     grid-row: 22/24;
     grid-column: 2/3;
     margin: 0 auto;
+    @include tablet {
+      grid-row: 15/17;
+      grid-column: 4/5;
+      margin: inherit;
+    }
+    // @include desktop {
+
+    // }
   }
 }
 //end of header section
@@ -109,6 +130,7 @@ body {
       }
     }
   }
+
   @include tablet {
     grid-template-columns: 50% 50%;
     height: $articleH;
@@ -128,6 +150,7 @@ body {
 footer {
   min-height: 100%;
   text-align: center;
+  padding: $padding;
   span {
     text-transform: uppercase;
   }

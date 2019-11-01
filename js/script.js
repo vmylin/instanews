@@ -3,8 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const articles = $('#articles');
 
     $('#news').on('change', function () {
+        //css selector to logo
+        $('.header-wrapper').addClass('change');
+        // css selector to grid, change the size of the grid
         let selection = $(this).val();
         $('.load-gif').show();
+
         $.ajax({
             method: 'GET',
             url: `https://api.nytimes.com/svc/topstories/v2/${selection}.json?api-key=AWYIBsLV3ssb38vug8gBUciGOuyLBhEN`,
@@ -12,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .done(function (data) {
                 $('.load-gif').hide();
-                console.log(data)
                 const removeObject = data.results.filter(function (e) {
                     if (e.multimedia[4] !== undefined) {
                         return true;
@@ -45,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         //always method is used for something like a loading spinner
     });
+    $('footer').append(`<p class="copyright">&copy; Copyright 2019 <span>instanews</span></p>`)
+
 });
 
 
