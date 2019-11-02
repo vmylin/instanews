@@ -1,8 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const topbtn = document.getElementById('btn');
+
+    window.onscroll = function () {
+        scrollPast();
+    }
+
+    function scrollPast() {
+        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            topbtn.style.display = "block";
+        } else {
+            topbtn.style.display = 'none';
+        }
+    }
+
+    function btnClick() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    topbtn.onclick = function () {
+        btnClick();
+    }
+
     const articles = $('#articles');
-    //i want to make the options to be called in as js
-    // make an array 
-    //
     $('#news').on('change', function () {
         $('.header-wrapper').addClass('change');
         $('.all-articles').addClass('change');
@@ -46,25 +65,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     $('footer').append(`<p class="copyright">&copy; Copyright 2019 <span>instanews</span></p>`)
 
-    const topbtn = document.getElementById('btn');
-
-    window.onscroll = function () {
-        scrollPast();
-    }
-
-    function scrollPast() {
-        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-            topbtn.style.display = "block";
-        } else {
-            topbtn.style.display = 'none';
-        }
-    }
-
-    function btnClick() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-    topbtn.onclick = function () {
-        btnClick();
-    }
 });                                                   

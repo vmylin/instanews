@@ -34,7 +34,12 @@ body {
     cursor: pointer;
     padding: 15px;
     border: 1px solid #fff;
-    // box-shadow:
+    box-shadow: 0 0 20px #000;
+    &:hover {
+      border: 1px solid #000;
+      color: #000;
+      background-color: #fff;
+    }
   }
   //form (nested grid)
   .category-form {
